@@ -1,0 +1,114 @@
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+.btnAdd {
+  padding: 10px 15px;
+  background-color: dodgerblue;
+  border: none;
+  color: #fff;
+  border-radius: 5px;
+  font-weight: 600;
+  margin: 30px auto;
+  display: block;
+  transition: transform 0.3s;
+}
+.userWrapper {
+  background-image: linear-gradient(to right, whitesmoke, darkgrey, whitesmoke);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  margin: 10px 0;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 600;
+  transition: transform 0.3s;
+}
+.userWrapper:hover {
+  transform: scale(1.05);
+}
+.btnDetails {
+  padding: 10px 15px;
+  background-color: transparent;
+  border: 2px solid limegreen;
+  color: limegreen;
+  border-radius: 5px;
+  transition: 0.5s;
+}
+.btnAdd:hover,
+.btnDetails:hover {
+  cursor: pointer;
+}
+.btnAdd:hover {
+  transform: scale(0.9);
+}
+.btnDetails:hover {
+  background-color: limegreen;
+  color: #fff;
+}
+
+/* style detail user */
+.card {
+  background-color: #f5f5f5;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  padding: 10px;
+  margin-top: 30px;
+  box-shadow: 10px 10px 15px -10px;
+}
+.cardImage {
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cardWrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+}
+.inputItem {
+  padding: 8px 0;
+  font-size: 16px;
+  border: none;
+  background-color: #f5f5f5;
+  font-weight: 600;
+  margin-bottom: 10px;
+  text-transform: capitalize;
+}
+.noBorder {
+  border: 2px solid black;
+}
+.btnWrapper {
+  display: flex;
+}
+.btnWrapper svg {
+  width: 20px;
+  height: 20px;
+  margin-right: 0;
+  fill: #fff;
+}
+.btn {
+  width: 100px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.btnDelete,
+.btnCross {
+  background-color: crimson;
+  margin-left: 10px;
+}
+.btnUpdate {
+  background-color: darkorange;
+  margin-right: 10px;
+}
+.btnCheck {
+  background-color: limegreen;
+  margin-right: 10px;
+}
