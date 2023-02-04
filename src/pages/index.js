@@ -2,18 +2,11 @@ import Head from 'next/head';
 import styles from '@/styles/Home.module.css';
 import Image from 'next/image';
 import iconElements from '../../public/elements.svg';
-import { useEffect, useState } from 'react';
-import Layout from '@/components/layout';
 import Link from 'next/link';
 
 export default function Home({ posts }) {
   const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
   const date = new Date();
-  const [loading, setLoading] = useState(false);
-
-  useEffect(() => {
-    setLoading(true);
-  }, []);
 
   return (
     <>
@@ -23,35 +16,30 @@ export default function Home({ posts }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Layout>
-        <main>
-          <section className={styles.container}>
-            <h1>Articles</h1>
-            {loading ? (
-              posts.map((post) => (
-                <article key={post.id} className={styles.blogWrapper}>
-                  <div className={styles.blogText}>
-                    <p className={styles.title}>{post.title}</p>
-                    <p className={styles.description}>{post.body}</p>
-                    <Link href={'/blog/' + post.id}>
-                      <button className={styles.btnRead}>Read More &raquo;</button>
-                    </Link>
 
-                    <p className={styles.date}>
-                      On {months[date.getMonth()]} {date.getDate()} , {date.getFullYear()} - Posted by User
-                    </p>
-                  </div>
-                  <div className={styles.blogImage}>
-                    <Image src={iconElements} width={200} height={200} alt="image" />
-                  </div>
-                </article>
-              ))
-            ) : (
-              <div className={styles.loader}></div>
-            )}
-          </section>
-        </main>
-      </Layout>
+      <main>
+        <section className={styles.container}>
+          <h1>Articles</h1>
+          {posts.map((post) => (
+            <article key={post.id} className={styles.blogWrapper}>
+              <div className={styles.blogText}>
+                <p className={styles.title}>{post.title}</p>
+                <p className={styles.description}>{post.body}</p>
+                <Link href={'/blog/' + post.id}>
+                  <button className={styles.btnRead}>Read More &raquo;</button>
+                </Link>
+
+                <p className={styles.date}>
+                  On {months[date.getMonth()]} {date.getDate()} , {date.getFullYear()} - Posted by User
+                </p>
+              </div>
+              <div className={styles.blogImage}>
+                <Image src={iconElements} width={200} height={200} alt="image" />
+              </div>
+            </article>
+          ))}
+        </section>
+      </main>
     </>
   );
 }
@@ -64,5 +52,6 @@ export async function getStaticProps() {
     props: {
       posts,
     },
+    revalidate: 10,
   };
 }

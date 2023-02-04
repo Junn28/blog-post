@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import Layout from '@/components/layout';
 import styles from '@/styles/Users.module.css';
 import Link from 'next/link';
 import AddUser from '@/components/add_user';
@@ -13,28 +12,27 @@ export default function Users({ users }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Layout>
-        <div id="user" className={styles.container}>
-          <h1>Users</h1>
-          <AddUser />
-          <button
-            className={styles.btnAdd}
-            onClick={() => {
-              document.querySelector('.modal').style.display = 'block';
-            }}
-          >
-            + Add User
-          </button>
-          {users.map((user) => (
-            <div key={user.id} className={styles.userWrapper}>
-              <p className={styles.name}>{user.name}</p>
-              <Link href={'/users/' + user.id}>
-                <button className={styles.btnDetails}>Details</button>
-              </Link>
-            </div>
-          ))}
-        </div>
-      </Layout>
+
+      <div id="user" className={styles.container}>
+        <h1>Users</h1>
+        <AddUser />
+        <button
+          className={styles.btnAdd}
+          onClick={() => {
+            document.querySelector('.modal').style.display = 'block';
+          }}
+        >
+          + Add User
+        </button>
+        {users.map((user) => (
+          <div key={user.id} className={styles.userWrapper}>
+            <p className={styles.name}>{user.name}</p>
+            <Link href={'/users/' + user.id}>
+              <button className={styles.btnDetails}>Details</button>
+            </Link>
+          </div>
+        ))}
+      </div>
     </>
   );
 }
@@ -54,5 +52,6 @@ export async function getStaticProps() {
     props: {
       users,
     },
+    revalidate: 10,
   };
 }

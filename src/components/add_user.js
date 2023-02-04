@@ -12,14 +12,11 @@ export default function AddUser() {
     };
     const dataJson = JSON.stringify(dataUser);
     const options = {
-      // The method is POST because we are sending data.
       method: 'POST',
-      // Tell the server we're sending JSON.
       headers: {
         Authorization: 'Bearer 9790edbfff496f9264e925ed95933e72406eb166598fdd1df4ee1cd8f589f21d',
         'Content-Type': 'application/json',
       },
-      // Body of the request is the JSON data we created above.
       body: dataJson,
     };
     const res = await fetch('https://gorest.co.in/public/v2/users', options);
