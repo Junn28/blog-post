@@ -32,7 +32,7 @@ export default function Blog({ post }) {
           On {months[date.getMonth()]} {date.getDate()} , {date.getFullYear()} - Posted by User
         </p>
         <div className={styles.blogImage}>
-          <Image src={iconElements} width="auto" height="auto" alt="image" />
+          <Image className={styles.elImage} src={iconElements} alt="image" />
         </div>
         <p className={styles.description}>{post.body}</p>
         <section className={styles.containerComments}>

@@ -13,7 +13,7 @@
   padding: 8px 0;
 }
 .blogText {
-  padding-right: 20px;
+  padding-e: 20px;
 }
 .title {
   font-size: 36px;
@@ -27,7 +27,7 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  width: 900px;
+  width: 70vw;
 }
 .date {
   font-size: 12px;
@@ -51,4 +51,30 @@
 }
 .btnRead:hover {
   cursor: pointer;
+}
+
+@media only screen and (max-width: 480px) {
+  .blogWrapper {
+    display: block;
+  }
+  .title {
+    font-size: 24px;
+  }
+  .description {
+    width: auto;
+    font-size: 14px;
+  }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 800px) {
+  .blogWrapper {
+    display: block;
+  }
+  .title {
+    font-size: 28px;
+  }
+  .description {
+    width: auto;
+    font-size: 18px;
+  }
 }

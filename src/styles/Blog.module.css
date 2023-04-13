@@ -6,7 +6,7 @@
   font-size: 36px;
   font-weight: 600;
   margin-top: 30px;
-  line-height: 35px;
+  line-height: 45px;
 }
 .date {
   font-size: 14px;
@@ -21,6 +21,10 @@
   width: 100%;
   text-align: center;
   margin: 20px 0;
+}
+.elImage {
+  width: 100%;
+  height: auto;
 }
 .containerComments {
   margin: 15px 0;
@@ -54,4 +58,43 @@
 }
 .text {
   font-size: 14px;
+}
+
+@media only screen and (max-width: 480px) {
+  .title {
+    font-size: 28px;
+    line-height: 35px;
+  }
+  .date {
+    font-size: 12px;
+  }
+  .description {
+    font-size: 14px;
+  }
+  .iconWrapper {
+    min-width: 70px;
+    height: 70px;
+  }
+  .iconWrapper svg {
+    height: 40px;
+  }
+  .text {
+    font-size: 12px;
+  }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 800px) {
+  .title {
+    font-size: 32px;
+  }
+  .description {
+    font-size: 16px;
+  }
+  .iconWrapper {
+    min-width: 70px;
+    height: 70px;
+  }
+  .iconWrapper svg {
+    height: 40px;
+  }
 }

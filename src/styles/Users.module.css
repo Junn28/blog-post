@@ -112,3 +112,21 @@
   background-color: limegreen;
   margin-right: 10px;
 }
+
+@media only screen and (max-width: 480px) {
+  .card {
+    grid-template-columns: auto;
+  }
+  .cardWrapper {
+    padding: 8px;
+  }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 800px) {
+  .card {
+    grid-template-columns: auto;
+  }
+  .cardWrapper {
+    padding: 8px;
+  }
+}

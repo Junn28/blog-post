@@ -65,7 +65,7 @@ export default function DetailUser({ user }) {
         <h1>Detail User</h1>
         <div className={styles.card}>
           <div className={styles.cardImage}>
-            <Image src={user.gender === 'male' ? male : female} width={300} height="auto" alt={user.gender === 'male' ? 'male avatar' : 'female avatar'} />
+            <Image src={user.gender === 'male' ? male : female} width={300} height={300} alt={user.gender === 'male' ? 'male avatar' : 'female avatar'} />
           </div>
           <form className={styles.cardWrapper} onSubmit={update ? deleteHandler : updateHandler}>
             <label htmlFor="name">Name</label>
